@@ -1,0 +1,25 @@
+[profile.default]
+# 1. අපේ Solidity Contracts තියෙන නිවැරදි Folder එක පෙන්වීම
+src = "blockchain/src"
+
+# 2. ඉස්සරහට අපි ලියන ඇඩ්වාන්ස් Tests තියෙන Folder එක
+test = "blockchain/test"
+
+# 3. Compile වෙද්දී හැදෙන Bytecode ගබඩා වන තාවකාලික Folder එක
+out = "blockchain/out"
+
+# 4. බාහිරින් ගන්නා OpenZeppelin / Chainlink Libraries රඳවන තැන
+libs = ["blockchain/lib"]
+
+# 5. Solidity Compiler අනුවාදය ස්ථාවර කිරීම
+solc_version = "0.8.18"
+
+# ⛽ Gas Optimizer එක පණ ගැන්වීම (Advanced Gas Saving)
+optimizer = true
+optimizer_runs = 200
+
+# Remappings - බාහිර Libraries ලේසියෙන් Import කරගන්න හදන Short-cuts
+remappings = [
+    '@chainlink/contracts/=blockchain/lib/chainlink-brownie-contracts/contracts/',
+    '@openzeppelin/contracts/=blockchain/lib/openzeppelin-contracts/contracts/'
+]
